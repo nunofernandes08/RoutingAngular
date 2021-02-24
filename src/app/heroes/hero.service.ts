@@ -19,13 +19,6 @@ export class HeroService {
 
   constructor(private messageService: MessageService,  private http: HttpClient) { }
 
-  /*getHeroes(): Observable<Hero[]>{
-    const heroes = of(Heroes);
-    this.messageService.add('HeroService: fetched heroes');
-    return heroes
-  }*/
-
-  /** GET heroes from the server */
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
     .pipe(

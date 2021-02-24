@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Crisis } from '../crisis';
-import { HeroService } from '../crisis.service';
+import { CrisisService } from '../crisis.service';
 
 @Component({
   selector: 'app-crisis-list',
@@ -10,17 +10,22 @@ import { HeroService } from '../crisis.service';
 })
 export class CrisisListComponent implements OnInit {
 
-  heroes!: Crisis[];
+  crises!: Crisis[];
 
   constructor(
-    private heroService: HeroService,) { }
+    private crisisService: CrisisService,) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getCrises();
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+  getCrises(): void {
+    this.crisisService.getCrises()
+    .subscribe(crises => 
+      {
+        this.crises = crises
+        console.log(crises)
+      }
+    );
   }
 }

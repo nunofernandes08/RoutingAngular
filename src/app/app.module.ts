@@ -9,6 +9,7 @@ import { CrisesModule } from './crises/crises.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CrisisCenterComponent } from './crises/crisis-center/crisis-center.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CrisisCenterComponent
   ],
   bootstrap: [ AppComponent ]
 })

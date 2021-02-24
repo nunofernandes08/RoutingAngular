@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { Crisis } from '../crisis';
-import { HeroService } from '../crisis.service';
+import { CrisisService } from '../crisis.service';
 
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
@@ -18,19 +18,19 @@ export class CrisisDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService,
+    private heroService: CrisisService,
     private location: Location,
     private router: Router,
-    private service: HeroService
+    private service: CrisisService
   ) {}
 
   ngOnInit(): void {
-    this.getHero();
+    this.getCrisis();
   }
 
-  getHero(): void {
+  getCrisis(): void {
     const id = +<String>this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
+    this.heroService.getCrisis(id)
       .subscribe(hero => this.hero = hero);
   }
 
@@ -38,12 +38,12 @@ export class CrisisDetailComponent implements OnInit {
     this.location.back();
   }
 
-  gotoHeroes() {
-    this.router.navigate(['/heroes']);
+  gotoCrisis() {
+    this.router.navigate(['/crises']);
   }
 
   save(): void {
-    this.heroService.updateHero(this.hero)
+    this.heroService.updateCrisis(this.hero)
       .subscribe(() => this.goBack());
   }
 }

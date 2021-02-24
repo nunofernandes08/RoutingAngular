@@ -1,9 +1,9 @@
 <h2>Crises</h2>
-<ul class="heroes">
-    <li *ngFor="let hero of heroes">
-        <a routerLink="/hero/{{hero.id}}">
+<ul class="crises">
+    <li *ngFor="let cri of crises">
+        <a routerLink="/crisis/{{cri.id}}">
         <!-- <a [routerLink]="['/hero', hero.id]"></a> -->
-            <span class="badge">{{hero.id}}</span> {{hero.name}}
+            <span class="badge">{{cri.id}} </span> {{cri.name}}
         </a>
     </li>
 </ul>
