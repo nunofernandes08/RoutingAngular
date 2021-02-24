@@ -7,19 +7,11 @@ import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
 
 import { CrisisRoutingModule } from './crises-routing.module';
 
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from '../in-memory-data.service';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    CrisisRoutingModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    CrisisRoutingModule
   ],
   declarations: [
     CrisisListComponent,
