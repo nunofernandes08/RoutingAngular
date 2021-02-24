@@ -1,15 +1,13 @@
-<!-- Despoleta quando um heroi é selecionado -->
-<!-- Usei o *ngIf para ver se tem ou não um heroi selecionado -->
-<!-- Usei o ngModel para poder alterar (bidirecional) o nome e aparecer logo -->
-
+<h2>HEROES</h2>
 <div *ngIf="hero">
-    <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>Id: </span>{{hero.id}}</div>
-    <div>
-      <label>Name:
-        <input [(ngModel)]="hero.name" placeholder="name"/>
-      </label>
-    </div>
-    <button (click)="goBack()">Go back</button>
-    <button (click)="save()">save</button>
+  <h3>"{{ hero.name }}"</h3>
+  <div>
+    <label>Id: </label>{{ hero.id }}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name"/>
+  </div>
+  <p>
+    <button (click)="gotoHeroes()">Back</button>
+  </p>
 </div>
